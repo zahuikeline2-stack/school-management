@@ -1,0 +1,24 @@
+{
+  "name": "school-management",
+  "version": "1.0.0",
+  "description": "",
+  "main": " main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zahuikeline2-stack/school-management.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/zahuikeline2-stack/school-management/issues"
+  },
+  "homepage": "https://github.com/zahuikeline2-stack/school-management#readme",
+  "dependencies": {
+    "better-sqlite3": "^12.10.0"
+  }
+}
