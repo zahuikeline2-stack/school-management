@@ -38,19 +38,37 @@ function deleteStudent(id) {
 
 ////Rechercher un etudiant
 
-function getStudents(id) {
+function  getStudentById(id) {
     const geStudents = db.prepare(`
-        SELLECT * FROM students
+        SELECT * FROM students
         WHERE id = ?
         `).get(id)
-        console.log("Etudiant re avec succès!")
-        return geStudents
+        console.log("Etudiant rechercher avec succès!")
+        return geStudents;
 
 }
-addStudent("143674Y","rethu","keline",25,"td3")
+
+// lister les etudiants
+
+
+
+function getStudents() {
+    const listeStudents = db.prepare(`
+        SELECT * FROM students
+        `).all()
+        return  listeStudents;
+
+}
+
+
+//addStudent("143674Y","rethu","keline",25,"td3")
+//deleteStudent(1)
 export {
     addStudent,
     getStudents,
     updateStudent,
-    deleteStudent
+    deleteStudent,
+    getStudentById,
+
+
 };
