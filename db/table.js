@@ -38,7 +38,8 @@ db.exec(`
             CREATE TABLE IF NOT EXISTS subjects(
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             nom TEXT NOT NULL,
-            teacher_id INTEGER NOT NULL
+            teacher_id INTEGER NOT NULL,
+            FOREIGN KEY (teacher_id) REFERENCES teachers(id)
             )
             `)
 
