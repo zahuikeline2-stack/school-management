@@ -31,4 +31,16 @@ function addSubjects (nom,teacher_id) {
         WHERE id = ?
         `)
        return affeSubject.run(teacher_id,id)
+
   }
+  export{
+    addSubjects,
+    affectSubject,
+    getSubjects
+  };
+
+  //affectSubject("13456","svt",)
+ // addSubjects("stv","keline")
+  // addSubjects("pc","zebi")
+  getSubjects
+

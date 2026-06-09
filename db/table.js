@@ -51,6 +51,7 @@ db.exec(`
              student_id INTEGER NOT NULL,
              subject_id INTEGER NOT NULL,
              note INTEGER NOT NULL
+             
              )
             `)
 
