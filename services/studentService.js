@@ -43,7 +43,6 @@ function  getStudentById(id) {
         SELECT * FROM students
         WHERE id = ?
         `).get(id)
-        console.log("Etudiant rechercher avec succès!")
         return geStudents;
 
 }
@@ -63,12 +62,11 @@ function getStudents() {
 
 //addStudent("143674Y","rethu","keline",25,"td3")
 //deleteStudent(1)
+addStudent("16025297H","zahui","keline",23,"licence1")
 export {
     addStudent,
     getStudents,
     updateStudent,
     deleteStudent,
     getStudentById,
-
-
 };
