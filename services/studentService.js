@@ -1,17 +1,19 @@
 import db from "../db/base.js";
 import Student from "../model/modelStudent.js";
+import log from "../utils/logger.js";
 ///ajouter un Etudiants
 
-function addStudent(matricule,nom,prenom,age,classe) {
+function addStudent(matricule,nom,prenom,age,classe,user_id) {
    const insertStudent = db.prepare(`
-    INSERT INTO students(matricule,nom,prenom,age,classe)
-    VALUES(?,?,?,?,?)
+    INSERT INTO students(matricule,nom,prenom,age,classe,user_id)
+    VALUES(?,?,?,?,?,?)
     `)
-    insertStudent.run(matricule,nom,prenom,age,classe);
+    insertStudent.run(matricule,nom,prenom,age,classe,user_id);
     console.log("Etudiant ajouter avec succès!")
-
-    ///modifier un etudiant//
 }
+
+
+///modifier un etudiant//
 function updateStudent(id,matricule,nom,prenom,age,classe) {
     const uptStudent=db.prepare(`
         UPDATE students
@@ -62,7 +64,9 @@ function getStudents() {
 
 //addStudent("143674Y","rethu","keline",25,"td3")
 //deleteStudent(1)
-addStudent("16025297H","zahui","keline",23,"licence1")
+
+//addStudent("3446Y","akpa","sophia",45,"master")
+
 export {
     addStudent,
     getStudents,

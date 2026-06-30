@@ -1,5 +1,5 @@
-import db from "../db/base";
-import Grades from "../model/modelGrades";
+import db from "../db/base.js";
+import Grades from "../model/modelGrades.js";
 
 ///ajouter une note(entre 0et 20)
 function addGrade(student_id,subject_id,note){
@@ -25,7 +25,7 @@ function updateGrade( note,student_id,subject_id){
         WHERE student_id = ? AND subject_id = ? 
         `)
     updGrade.run( note,student_id,subject_id) 
-    console.log("noté de l' etudiant modifier avec succès!") 
+    
 
 }
 
@@ -37,9 +37,34 @@ function DeleteGrade(id){
         WHERE id = ?
         `)
     DeletGrade.run(id)
-   console.log("noté de l' etudiant supprimer avec succès!")  
-
 }
 
 ////Calculer la moyenne d’un étudiant
 
+function getGrade(student_id){
+    const geGrade = db.prepare(`
+        SELECT AVG(note) AS moyenne
+        FROM grades
+        WHERE student_id = ?
+        `).get(student_id);
+        return geGrade;
+}
+///recuper tous les notes
+
+function getGradesStudent(student_id) {
+
+    const grades = db.prepare(`
+        SELECT *
+        FROM grades
+        WHERE student_id = ?
+    `).all(student_id);
+
+    return grades;
+}
+export{
+    addGrade,
+    updateGrade,
+    DeleteGrade,
+    getGrade,
+    getGradesStudent
+}

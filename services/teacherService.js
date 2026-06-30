@@ -1,17 +1,24 @@
-import db from "../db/base";
-import Teacherr from "../model/modelTeacher";
+import db from "../db/base.js";
+import log from "../utils/logger.js";
 
 ///Ajouter un prof//
 
-function addTeacher(nom,matiere){
+function addTeacher(nom,matiere,user_id){
     const insertTeacher = db.prepare(`
-        INSERT INTO teachers(nom,matiere)
-        values(?,?)
+        INSERT INTO teachers(nom,matiere,user_id)
+        values(?,?,?)
         `)
-    insertTeacher.run(nom,matiere)
+    insertTeacher.run(nom,matiere,user_id)
     console.log(" professeur ajouter avec succès!")   
 }
-///modifier un pro//
+//addTeacher('Dybi prince','svt')
+//addTeacher('Koffi Elizier','pc')
+//addTeacher('Akpa Edwig','Math')
+//addTeacher("Dybi", "Maths");
+//addTeacher('Ocho','ANG',1)
+
+
+///modifier un prof//
 
 function updateTeacher(id,nom,matiere){
     const uptTeacher=db.prepare(`

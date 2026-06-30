@@ -20,6 +20,9 @@
   },
   "homepage": "https://github.com/zahuikeline2-stack/school-management#readme",
   "dependencies": {
-    "better-sqlite3": "^12.10.0"
+    "better-sqlite3": "^12.10.0",
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7",
+    "prompt-sync": "^4.2.0"
   }
 }

@@ -11,6 +11,8 @@ function addSubjects (nom,teacher_id) {
      adSubjects.run(nom,teacher_id)
      console.log("matiere ajouter avec succès!")   
   }
+  //addSubjects("Dybi",2)
+  //addSubjects("SVT",1)
 
   ///Lister les matieres
 
@@ -42,5 +44,5 @@ function addSubjects (nom,teacher_id) {
   //affectSubject("13456","svt",)
  // addSubjects("stv","keline")
   // addSubjects("pc","zebi")
-  getSubjects
+ 
 
