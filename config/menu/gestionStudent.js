@@ -1,9 +1,10 @@
 import { poserQuestion } from "../../utils/helpers.js";
 import { addStudent,getStudentById,getStudents,updateStudent,deleteStudent } from "../../services/studentService.js";
 import { menuAdmin } from "./menuAdmin.js";
-
+let choix="";
 function gesionStudents(){
-console.log(`
+do {
+    console.log(`
 
     ==========================
          GESTION ÉTUDIANTS
@@ -16,13 +17,13 @@ console.log(`
 5. Lister des étudiants
 6. Retour menu admin
     `)
-    const choix = poserQuestion("choix :");
+    choix = poserQuestion("choix :");
     if(choix === '1'){
-        const matricule = poserQuestion("votre matricule :");
-        const nom = poserQuestion(" votre nom :")
-        const prenom = poserQuestion(" votre prenom :");
-        const age = poserQuestion("votre age :")
-        const classe = poserQuestion("votre classe :");
+        const matricule = poserQuestion(" Matricule :");
+        const nom = poserQuestion(" Nom :")
+        const prenom = poserQuestion("  Prenom :");
+        const age = poserQuestion(" Age :")
+        const classe = poserQuestion(" Classe :");
         const user_id = poserQuestion("user_id :");
         addStudent(matricule,nom,prenom,age,classe,user_id)
     }
@@ -85,9 +86,7 @@ user_id: ${element.user_id}
         
       });
 }
-else{
-   menuAdmin()
-}
+} while (choix!=="6");
 }
 
 export{

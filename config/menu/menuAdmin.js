@@ -6,6 +6,7 @@ import { gestionSubject } from "./gestionSubject.js";
 import { gestionGrade } from "./gestionGrade.js";
 import { gestionAbsence } from "./gestionAbsence.js";
 import { Statistiques } from "./Statistique.js";
+import log from "../../utils/logger.js";
 function menuAdmin(){
     console.log(`
 =========================
@@ -46,7 +47,18 @@ function menuAdmin(){
 
     }
     else{
-        console.log("Au revoir")
+        console.log(`
+==================================
+    DÉCONNEXION RÉUSSIE
+==================================
+
+Merci d'avoir utilisé
+School Management System.
+
+À bientôt !
+
+==================================
+`);
     }
 }
 export{

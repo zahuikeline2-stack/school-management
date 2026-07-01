@@ -5,7 +5,7 @@ import Grades from "../model/modelGrades.js";
 function addGrade(student_id,subject_id,note){
     if (note < 0 || note > 20){
         return
-      console.log("la note doit etre entre 0 et 20")  
+     // console.log("la note doit etre entre 0 et 20")  
 
     }
     const adGrade = db.prepare(`
@@ -13,7 +13,7 @@ function addGrade(student_id,subject_id,note){
         VALUES(?,?,?)
         `)
     adGrade.run(student_id,subject_id,note)
-    console.log("noté de l' etudiant ajoutée avec succès!")    
+    //console.log("noté de l' etudiant ajoutée avec succès!")    
 }
 
 ///Modifier une note

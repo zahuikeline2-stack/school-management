@@ -1,9 +1,11 @@
 import { poserQuestion } from "../../utils/helpers.js";
 import { addAbsence,updateAbsence,getAbsence } from "../../services/absencesService.js";
 import { menuAdmin } from "./menuAdmin.js";
-
+import log from "../../utils/logger.js";
+let choix ="";
 function gestionAbsence(){
-    console.log(`
+    do {
+        console.log(`
 =========================
      GESTION ABSENCES
 =========================
@@ -13,6 +15,7 @@ function gestionAbsence(){
 3. Historique absences
 4. Retour menu admin
         `)
+        choix = poserQuestion("Choix : ");
 
         ///ajouter une absebce
        
@@ -42,9 +45,9 @@ STATUS : ${element.status}
 `);
 });
     }
-    else{
-       menuAdmin()
-    }
+    } while (choix!=="4");
+    menuAdmin()
+    
 }
 export{
     gestionAbsence

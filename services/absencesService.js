@@ -8,7 +8,7 @@ function addAbsence(student_id,date,status){
     VALUES(?,?,?)   
         `)
         adAbsence .run(student_id,date,status);
-        console.log("Absence enregistrée avec succès !");
+       // console.log("Absence enregistrée avec succès !");
 }
 
 //addAbsence(9,"2026-28-06","Absence")
@@ -21,7 +21,7 @@ function updateAbsence(status,id){
         WHERE id = ?
         `)
      const  res=  updatAbsence.run(status,id)
-        console.log("Statut de l'absence mis à jour !", res);
+        //console.log("Statut de l'absence mis à jour !", res);
 }
 //updateAbsence("non justifie","2")
 

@@ -32,7 +32,7 @@ function gestionUsers() {
         addUser(name, role, password, email);
       }
       else {
-        console.log("Aucun champs vide n est tolerer ")
+        console.log("Aucun champ vide n'est toléré. ")
       }
     }
 

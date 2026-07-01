@@ -1,8 +1,10 @@
 import { poserQuestion } from "../../utils/helpers.js";
 import { addSubjects,affectSubject,getSubjects } from "../../services/subjectsService.js";
 import { menuAdmin } from "./menuAdmin.js";
-
+let choix =""
 function gestionSubject(){
+    
+do {
     console.log(`
 =========================
  GESTION MATIÈRES
@@ -13,7 +15,7 @@ function gestionSubject(){
 3. Affecter professeur
 4. Retour menu admin
         `)
-         const choix = poserQuestion("choix :");
+          choix = poserQuestion("choix :");
     if(choix === '1'){
         const nom = poserQuestion(" nom :")
         const teacher_id = poserQuestion('teacher_id :');
@@ -40,9 +42,8 @@ const subjectId = poserQuestion("ID de la matière : ");
   const resultat = affectSubject(teacherId, subjectId);
   console.log(resultat)
     }
-else{
-    menuAdmin()
-}
+} while (choix !=="4");
+menuAdmin()
 }
 export{
     gestionSubject

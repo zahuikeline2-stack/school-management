@@ -4,8 +4,10 @@ import { poserQuestion } from "../utils/helpers.js";
 import { menuAdmin } from "./menu/menuAdmin.js";
 import { menuTeachers } from "./menu/menuTeacher.js";
 import { menuStudent } from "./menu/menuStudent.js";
+import log from "../utils/logger.js";
 
-console.log(`
+function connection(){
+    console.log(`
 =================================
  SYSTÈME DE GESTION D'ÉCOLE
 =================================
@@ -34,7 +36,7 @@ if (choix === "1") {
             console.log(" Vous êtes un professeur");
             menuTeachers()
         } 
-        else if (user.role === "étudiant") {
+        else if (user.role === "etudiant") {
             console.log(" Vous êtes un étudiant");
             menuStudent()
         } 
@@ -46,5 +48,20 @@ if (choix === "1") {
 
 } 
 else {
-    console.log(" Au revoir");
+    console.log(`
+==================================
+    DÉCONNEXION RÉUSSIE
+==================================
+
+Merci d'avoir utilisé
+School Management System.
+
+À bientôt !
+
+==================================
+`);
+}
+}
+export default{
+    connection
 }

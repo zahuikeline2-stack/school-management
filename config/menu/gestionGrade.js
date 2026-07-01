@@ -1,8 +1,10 @@
 import { poserQuestion } from "../../utils/helpers.js";
 import { addGrade,updateGrade,getGrade,DeleteGrade } from "../../services/gradeService.js";
 import { menuAdmin } from "./menuAdmin.js";
-
+let choix =""
 function gestionGrade(){
+    
+do {
     console.log(`
 =========================
       GESTION NOTES
@@ -14,6 +16,7 @@ function gestionGrade(){
 4. Calculer la moyenne d'un étudiant
 5. Retour menu admin
         `)
+         choix = poserQuestion("Choix : ");
         const choix = poserQuestion("choix :");
         ///ajouter une notes
     if(choix === '1'){
@@ -45,9 +48,8 @@ else if(choix ==="4"){
      const resultat = getGrade(id_Student)
      console.log(resultat)
 }
-else{
-    menuAdmin()
-}
+} while (choix!=="5");
+menuAdmin()
 }
 export{
     gestionGrade

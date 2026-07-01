@@ -1,8 +1,11 @@
 import { poserQuestion } from "../../utils/helpers.js";
 import { identifiStudent,moyenneGenerale,CompterAbsences } from "../../services/statistiqueService.js";
+import { menuAdmin } from "./menuAdmin.js";
 
 function Statistiques(){
-    console.log(`
+    let choix =""
+    do {
+        console.log(`
 =========================
      STATISTIQUES
 =========================
@@ -13,10 +16,13 @@ function Statistiques(){
 4. Retour menu admin
         `)
         // Identifier le meilleur étudiant (selon moyenne)
-        const choix = poserQuestion("choix :")
+         choix = poserQuestion("choix :")
         if(choix==='1'){
-            const meilleur = identifiStudent()
-            console.log(meilleur)
+           const meilleur = identifiStudent();
+        console.log(`
+       Nom : ${meilleur.nom}
+       Moyenne : ${meilleur.moyenne}
+   `);
 
         }
         //Calculer la moyenne générale
@@ -31,9 +37,9 @@ function Statistiques(){
             console.log(Compter)
     
    }
-   else {
-        console.log("menu Admin")
-    }
+   
+    } while (choix !=="4");
+    menuAdmin()
 }
 export{
     Statistiques
