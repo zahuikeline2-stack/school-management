@@ -23,6 +23,12 @@ function addSubjects (nom,teacher_id) {
         return geSubjects
   }
 
+    function getSubjectsById(id){
+    const geSubjects = db.prepare(`
+        SELECT * FROM subjects WHERE id = ?
+        `).get(id)
+        return geSubjects
+  }
 
   ///affecter un professeur à une matière
 
@@ -35,10 +41,12 @@ function addSubjects (nom,teacher_id) {
        return affeSubject.run(teacher_id,id)
 
   }
+  
   export{
     addSubjects,
     affectSubject,
-    getSubjects
+    getSubjects,
+    getSubjectsById
   };
 
   //affectSubject("13456","svt",)

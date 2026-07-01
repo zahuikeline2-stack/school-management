@@ -76,7 +76,6 @@ NOM         : ${element.nom}
 PRÉNOM      : ${element.prenom}
 ÂGE         : ${element.age} ans
 CLASSE      : ${element.classe}
-USER ID     : ${element.user_id}
 
 ----------------------------------
 `);

@@ -3,6 +3,8 @@ import { getStudentById } from "../../services/studentService.js";
 import { getGradesStudent, getGrade } from "../../services/gradeService.js";
 import { getAbsence } from "../../services/absencesService.js";
 import { getStudents } from "../../services/studentService.js";
+import { getSubjectsById,getSubjects } from "../../services/subjectsService.js";
+import { getTeacherById } from "../../services/teacherService.js";
 import log from "../../utils/logger.js";
 
 let choix = "";
@@ -67,7 +69,7 @@ USER ID    : ${listers.user_id}
             notes.forEach(element => {
 
                 console.log(`
-MATIÈRE : ${element.matiere}
+MATIÈRE : ${getSubjectsById(element.subject_id).nom}
 NOTE    : ${element.note}/20
 
 ----------------------------------
@@ -125,7 +127,7 @@ STATUT   : ${element.status}
         // Voir les matières
         else if (choix === "5") {
 
-            const matieres = getStudents();
+            const matieres = getSubjects();
 
             console.log(`
 ==================================
@@ -133,11 +135,11 @@ STATUT   : ${element.status}
 ==================================
 `);
 
-            matieres.forEach(eleme => {
+            matieres.forEach(element => {
 
-                console.log(`
-ID       : ${eleme.id}
-MATIÈRE  : ${eleme.nom}
+    console.log(`
+MATIÈRE    : ${element.nom}
+PROFESSEUR : ${getTeacherById(element.teacher_id).nom}
 
 ----------------------------------
 `);

@@ -52,10 +52,16 @@ function getTeacher(id) {
         `).get(id)
         return geTeacher
  }
-
+function getTeacherById(id) {
+    return db.prepare(`
+        SELECT * FROM teachers
+        WHERE id = ?
+    `).get(id);
+}
  export{
     addTeacher,
     updateTeacher,
     DEleteTeacher,
-    getTeacher
+    getTeacher,
+    getTeacherById
  };

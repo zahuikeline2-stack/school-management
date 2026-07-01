@@ -1,1 +1,2 @@
-import connexion from "./config/connexion.js";
+import { connection } from "./config/connexion.js"
+connection()

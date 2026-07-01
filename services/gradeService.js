@@ -61,6 +61,17 @@ function getGradesStudent(student_id) {
 
     return grades;
 }
+
+function getSubject(student_id) {
+
+    const grades = db.prepare(`
+        SELECT *
+        FROM grades
+        WHERE student_id = ?
+    `).all(student_id);
+
+    return grades;
+}
 export{
     addGrade,
     updateGrade,

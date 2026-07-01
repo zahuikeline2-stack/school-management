@@ -62,6 +62,6 @@ School Management System.
 `);
 }
 }
-export default{
+export {
     connection
 }
