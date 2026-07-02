@@ -17,7 +17,7 @@ do {
 5. Retour menu admin
         `)
          choix = poserQuestion("Choix : ");
-        const choix = poserQuestion("choix :");
+        //const choix = poserQuestion("choix :");
         ///ajouter une notes
     if(choix === '1'){
         const student_id = poserQuestion("ID de l' etudiant :");

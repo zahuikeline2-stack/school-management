@@ -4,7 +4,7 @@ import db from "../db/base.js";
 
 function identifiStudent(){
         const identifStudent = db.prepare(`
-            SELECT student_id , AVG(note) AS moyenne FROM grade
+            SELECT student_id , AVG(note) AS moyenne FROM grades
             GROUP BY student_id
             ORDER BY moyenne DESC
             LIMIT 1
@@ -17,7 +17,7 @@ function identifiStudent(){
 
 function moyenneGenerale(){
      const moyenGenerale = db.prepare(`
-        SELECT AVG(note) AS moyenne_generale FROM grade
+        SELECT AVG(note) AS moyenne_generale FROM grades
         `).get()
         return moyenGenerale
 }    
